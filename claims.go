@@ -71,3 +71,8 @@ func (c *Claims) HasClaim(key string) bool {
 	_, ok := c.claimsMap[key]
 	return ok
 }
+
+// Map get internal map
+func (c *Claims) Map() map[string]interface{} {
+	return c.claimsMap
+}
