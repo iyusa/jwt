@@ -76,3 +76,13 @@ func (c *Claims) HasClaim(key string) bool {
 func (c *Claims) Map() map[string]interface{} {
 	return c.claimsMap
 }
+
+// Gets returns the claim in string form and returns an empty string if not exists
+func (c Claims) Gets(key string) string {
+	result, ok := c.claimsMap[key]
+	if !ok {
+		return ""
+	}
+
+	return result.(string)
+}
